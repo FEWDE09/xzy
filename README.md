@@ -57,6 +57,15 @@ npm run contracts:build
 
 ## Project layout
 
+# Screenshots 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/80a6c290-8ddb-422b-8cce-
+c38a38b10251" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bd8c4c46-66ed-4ace-ab98-7b5df8275fb8" />
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2129c02e-6f92-4a64-883e-b98558b1abe8" />
+
+
 - `client/` — React UI (`GameBoard`, `DiceRoller`, `WalletPanel`, `TransactionFeed`, `Leaderboard`, …)
 - `server/` — rooms, turn logic, Horizon verification, optional treasury payouts
 - `contracts/sm-monopoly/` — Soroban (Rust) stub (`version`) for future escrow / deeds / auctions
