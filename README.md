@@ -60,3 +60,7 @@ npm run contracts:build
 - `client/` — React UI (`GameBoard`, `DiceRoller`, `WalletPanel`, `TransactionFeed`, `Leaderboard`, …)
 - `server/` — rooms, turn logic, Horizon verification, optional treasury payouts
 - `contracts/sm-monopoly/` — Soroban (Rust) stub (`version`) for future escrow / deeds / auctions
+
+
+
+video LINK : https://www.loom.com/share/a342ffb45b7f44cc8a2dc7871e3edc1d
