@@ -1,0 +1,31 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    env_file:
+      - path: ./server/.env
+        required: false
+      - path: ./server/.env.example
+        required: false
+    ports:
+      - "3847:3847"
+    # Allows reload if you edit server files on host
+    volumes:
+      - ./server:/app
+      - /app/node_modules
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    environment:
+      # Vite dev proxy runs inside the container, so it must reach the *server container*
+      VITE_DEV_PROXY_TARGET: http://server:3847
+    ports:
+      - "5173:5173"
+    depends_on:
+      - server
+    volumes:
+      - ./client:/app
+      - /app/node_modules

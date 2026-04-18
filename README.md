@@ -45,12 +45,18 @@ Configure the server (copy `server/.env.example` to `server/.env`):
 
 Memos are verified on-chain (`SM-BUY-…`, `SM-RENT-…`, `SM-TAX-…`, etc.).
 
-## Optional: Soroban
+## Soroban (Rust smart contracts)
 
-Rent formulas and ownership can be enforced in **Soroban** contracts later; the current server validates payments via **Horizon** and keeps authoritative game state in memory.
+The repo did **not** use Rust on-chain before; payments are plain **XLM** + **Horizon** memos. A **Soroban** scaffold is now under **`contracts/sm-monopoly/`** (Rust, `soroban-sdk`). See **`contracts/README.md`** for what to install (Rust, `wasm32-unknown-unknown`, Stellar CLI) and how to build. The live game still uses the Node server as source of truth until you wire `invokeContract` flows.
+
+From the repo root:
+
+```bash
+npm run contracts:build
+```
 
 ## Project layout
 
 - `client/` — React UI (`GameBoard`, `DiceRoller`, `WalletPanel`, `TransactionFeed`, `Leaderboard`, …)
 - `server/` — rooms, turn logic, Horizon verification, optional treasury payouts
-# xzy
+- `contracts/sm-monopoly/` — Soroban (Rust) stub (`version`) for future escrow / deeds / auctions
